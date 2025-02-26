@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
 
 body {
@@ -9,6 +10,10 @@ body {
     position: relative;
     display: flex;
     justify-content: center;
+}
+
+main{
+    margin: 30px;
 }
 
 h1 {
