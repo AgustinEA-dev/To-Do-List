@@ -5,21 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
 
 <body>
+    <header id="header"></header>
     <main>
         <h1>To-Do List</h1>
-        <input type="text" id="taskInput" placeholder="Agrega una tarea" />
-        <div>
+        <div id="calendar-container">
+            <div id="current-time"></div>
+            <div id="calendar"></div>
+        </div>
+        <div class="inputContainer">
+            <input type="text" name="taskInput" id="taskInput" placeholder="" />
+            <label for="taskInput">Add something to do</label>
+        </div>
+        <div class="buttonContainer">
             <button id="addTaskButton">Add Task</button>
         </div>
 
         <h3>This is what I have to do:</h3>
         <ul id="taskList"></ul>
     </main>
-    <script src="./script.js"></script>
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/script-hour-date.js"></script>
 </body>
 
 </html>

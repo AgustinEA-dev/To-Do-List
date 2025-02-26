@@ -1,0 +1,166 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 70px;
+    margin: 50px;
+    background: linear-gradient(45deg, #ff4d4d, #3f4886);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-align: center;
+}
+
+.inputContainer {
+    position: relative;
+    width: 300px;
+}
+
+#taskInput {
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+label {
+    color: #808080;
+    position: absolute;
+    left: 10px;
+    top: 40%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #aaa;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+input:focus+label,
+input:not(:placeholder-shown)+label {
+    top: -10px;
+    font-size: 12px;
+    color: #707070;
+}
+
+#addTaskButton {
+    padding: 14px;
+    font-size: 12px;
+}
+
+#calendar-container {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#current-time {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #3f4886;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+}
+
+#calendar div {
+    padding: 10px;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#calendar .header {
+    font-weight: bold;
+    background-color: #3f4886;
+    color: #ffffff;
+}
+
+#calendar .today {
+    background-color: #ff4d4d;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    color: #808080;
+    font-size: 17px;
+}
+
+li {
+    background-color: #f4f4f4;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000000;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+li.new-task {
+    opacity: 0;
+    transform: translateX(30px);
+    animation: slideIn 0.5s forwards;
+}
+
+li.removed {
+    animation: fadeOut 0.5s forwards;
+}
+
+button {
+    padding: 10px 10px;
+    background-color: #ff4d4d;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff1a1a;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+}
