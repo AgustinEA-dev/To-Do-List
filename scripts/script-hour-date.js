@@ -1,6 +1,8 @@
 const calendarContainer = document.getElementById("calendar");
 const currentTimeContainer = document.getElementById("current-time");
 
+currentTimeContainer.textContent = `Loading date and local hour...`;
+
 function updateTime() {
     const now = new Date();
     const hours = String(now.getHours()).padStart(2, '0');
