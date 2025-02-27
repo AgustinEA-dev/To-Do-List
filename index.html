@@ -6,29 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
     <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sigmar&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header id="header"></header>
+    <header id="header">
+        <button id="changeLanguageButton">LANG</button>
+    </header>
     <main>
-        <h1>To-Do List</h1>
-        <div id="calendar-container">
-            <div id="current-time"></div>
-            <div id="calendar"></div>
-        </div>
-        <div class="inputContainer">
-            <input type="text" name="taskInput" id="taskInput" placeholder="" />
-            <label for="taskInput">Add something to do</label>
-        </div>
-        <div class="buttonContainer">
-            <button id="addTaskButton">Add Task</button>
+        <h1 id="mainTitle"></h1>
+        <div id="appContent">
+            <div id="calendar-container">
+                <div id="current-time"></div>
+                <div id="calendar"></div>
+            </div>
+            <div class="inputContainer">
+                <input type="text" name="taskInput" id="taskInput" placeholder="" />
+                <label for="taskInput">Add something to do</label>
+            </div>
+            <div class="buttonContainer">
+                <button id="addTaskButton">Add Task</button>
+            </div>
+
+            <h3>This is what I have to do:</h3>
+            <ul id="taskList"></ul>
         </div>
 
-        <h3>This is what I have to do:</h3>
-        <ul id="taskList"></ul>
     </main>
     <script src="./scripts/script-main.js"></script>
     <script src="./scripts/script-hour-date.js"></script>
+    <script src="./scripts/script-language-handler.js"></script>
 </body>
 
 </html>

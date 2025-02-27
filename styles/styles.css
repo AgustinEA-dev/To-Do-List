@@ -5,25 +5,56 @@
 }
 
 body {
-    min-height: 100dvh;
     font-family: Arial, sans-serif;
     position: relative;
-    display: flex;
-    justify-content: center;
 }
 
-main{
-    margin: 30px;
+header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#changeLanguageButton {
+    margin-right: 30px;
+}
+
+main {
+    padding: 30px;
+    z-index: 1;
+    color: white;
+}
+
+
+body::before,
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgb(255, 194, 119), rgb(109, 101, 204));
+    z-index: -1;
+    opacity: 0.6;
 }
 
 h1 {
     font-size: 70px;
-    margin: 50px;
-    background: linear-gradient(45deg, #ff4d4d, #3f4886);
+    font-family: "Sigmar", serif;
+    margin: 40px 0;
+    background: linear-gradient(45deg, #ffffff, #ffffff);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     text-align: center;
+}
+
+#appContent {
+    max-width: 500px;
+    margin: auto;
 }
 
 .inputContainer {
@@ -36,6 +67,7 @@ h1 {
     margin-bottom: 10px;
     font-size: 18px;
     outline: none;
+    border: none;
     transition: all 0.3s ease;
 }
 
@@ -58,6 +90,7 @@ input:not(:placeholder-shown)+label {
     color: #707070;
 }
 
+#changeLanguageButton,
 #addTaskButton {
     padding: 14px;
     font-size: 12px;
@@ -107,7 +140,7 @@ input:not(:placeholder-shown)+label {
 
 @media (max-width: 600px) {
     #calendar {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 
     #calendar div {
@@ -117,6 +150,10 @@ input:not(:placeholder-shown)+label {
 
     #current-time {
         font-size: 16px;
+    }
+
+    #mainTitle {
+        font-size: 50px;
     }
 }
 
@@ -151,8 +188,9 @@ input:not(:placeholder-shown)+label {
 
 h3 {
     font-size: 25px;
-    color: #3f4886;
+    color: #ffffff;
     margin: 20px;
+    text-decoration: underline;
 }
 
 ul {
