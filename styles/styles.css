@@ -7,6 +7,7 @@
 body {
     font-family: Arial, sans-serif;
     position: relative;
+    min-height: 100dvh;
 }
 
 header {
@@ -44,7 +45,7 @@ body::after {
 h1 {
     font-size: 70px;
     font-family: "Sigmar", serif;
-    margin: 40px 0;
+    margin: 20px 0;
     background: linear-gradient(45deg, #ffffff, #ffffff);
     background-clip: text;
     -webkit-background-clip: text;
