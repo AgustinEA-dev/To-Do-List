@@ -1,7 +1,7 @@
 const calendarContainer = document.getElementById("calendar");
 const currentTimeContainer = document.getElementById("current-time");
 
-currentTimeContainer.textContent = `Loading date and local hour...`;
+currentTimeContainer.textContent = "Loading..."
 
 function updateTime() {
     const now = new Date();
@@ -9,10 +9,9 @@ function updateTime() {
     const minutes = String(now.getMinutes()).padStart(2, '0');
     const seconds = String(now.getSeconds()).padStart(2, '0');
     const timeString = `${hours}:${minutes}:${seconds}`;
+    const dateString = now.toLocaleDateString(currentLanguage === 'en' ? 'en-EN' : 'es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
 
-    const dateString = now.toLocaleDateString('en-EN', { year: 'numeric', month: 'long', day: 'numeric' });
-
-    currentTimeContainer.textContent = `Date: ${dateString} | Hour: ${timeString}`;
+    currentTimeContainer.textContent = `${translations[currentLanguage].currentTime} ${dateString} | ${timeString}`;
 }
 
 function generateCalendar(year, month) {

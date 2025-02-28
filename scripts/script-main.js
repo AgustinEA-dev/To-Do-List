@@ -103,7 +103,8 @@ function renderList(isNewTask = false) {
         }
 
         const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Eliminar';
+        deleteButton.textContent = 'X';
+        deleteButton.setAttribute("id", "deleteTaskButton")
         deleteButton.onclick = () => removeTask(task, li);
 
         li.appendChild(deleteButton)
