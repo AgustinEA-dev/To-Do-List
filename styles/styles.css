@@ -31,7 +31,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Montserrat", serif;
     position: relative;
     min-height: 100dvh;
 }
@@ -122,6 +122,7 @@ input:not(:placeholder-shown)+label {
 #addTaskButton {
     padding: 14px;
     font-size: 12px;
+    font-family: "Montserrat", serif;
 }
 
 #deleteTaskButton {
@@ -141,7 +142,7 @@ input:not(:placeholder-shown)+label {
 #current-time {
     font-size: 18px;
     margin-bottom: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Share Tech Mono", serif;
     color: #3f4886;
 }
 
