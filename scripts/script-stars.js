@@ -1,31 +1,50 @@
-// Función para crear estrellas de manera dinámica
 function createStars() {
-    const starsContainer = document.createElement("div");
-    starsContainer.classList.add("stars");
+    const starsContainer = document.createElement("div")
+    starsContainer.classList.add("stars")
 
-    const numberOfStars = 150;  // Número total de estrellas que quieres
+    const numberOfStars = 150;
     for (let i = 0; i < numberOfStars; i++) {
-        const star = document.createElement("div");
-        star.classList.add("star");
+        const star = document.createElement("div")
+        star.classList.add("star")
 
-        // Asignamos un tamaño aleatorio a las estrellas
-        const size = Math.random() < 0.5 ? "small" : "big";  // Estrella pequeña o grande
-        star.classList.add(size);
+        const size = Math.random() < 0.5 ? "small" : "big"
+        star.classList.add(size)
 
-        // Establecemos una posición aleatoria en el contenedor
-        const x = Math.random() * 100 + "%";
-        const y = Math.random() * 100 + "%";
+        const x = Math.random() * 100 + "%"
+        const y = Math.random() * 100 + "%"
 
-        star.style.top = y;
-        star.style.left = x;
+        star.style.top = y
+        star.style.left = x
 
-        // Añadimos la estrella al contenedor de estrellas
-        starsContainer.appendChild(star);
+        starsContainer.appendChild(star)
     }
 
-    // Añadimos el contenedor de estrellas al body
-    document.body.appendChild(starsContainer);
+    document.body.appendChild(starsContainer)
 }
 
-// Llamamos a la función para crear las estrellas
-createStars();
+function removeStars() {
+    const starsContainer = document.querySelector(".stars")
+    if (starsContainer) {
+        starsContainer.remove()
+    }
+}
+
+function setDayNightMode() {
+    const now = new Date()
+    const hour = now.getHours()
+    const body = document.body
+
+    if (hour >= 6 && hour < 18) {
+        body.classList.remove('night-background')
+        body.classList.add('day-background')
+        removeStars()
+    } else {
+        body.classList.remove('day-background')
+        body.classList.add('night-background')
+        createStars()
+    }
+}
+
+setDayNightMode();
+
+setInterval(setDayNightMode, 3600000)
