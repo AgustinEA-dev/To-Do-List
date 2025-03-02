@@ -37,14 +37,19 @@ function upDateUI() {
     const addButton = document.getElementById("addTaskButton")
     const langButton = document.getElementById("changeLanguageButton")
     const emptyUl = document.getElementById("taskList")
+
     if (h1 && h3 && label && addButton && langButton && emptyUl) {
         h1.innerText = translations[currentLanguage].h1
         h3.innerText = translations[currentLanguage].h3
         label.innerText = translations[currentLanguage].label
         addButton.innerText = translations[currentLanguage].addButton
         langButton.innerText = translations[currentLanguage].langButton
-        emptyUl.innerText = translations[currentLanguage].emptyUl
     }
+
+    if (emptyUl && emptyUl.innerHTML.trim() === "") {
+        emptyUl.innerText = translations[currentLanguage].emptyUl;
+    }
+
 }
 
 upDateUI()
