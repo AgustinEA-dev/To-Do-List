@@ -1,7 +1,26 @@
 const calendarContainer = document.getElementById("calendar");
 const currentTimeContainer = document.getElementById("current-time");
+const inputField = document.getElementById("taskInput")
 
 currentTimeContainer.textContent = "Loading..."
+
+// Función para cambiar el fondo según la hora del día
+function setDayNightMode() {
+    const now = new Date();
+    const hour = now.getHours(); // Obtener la hora actual (de 0 a 23)
+
+    const body = document.body;
+
+    if (hour >= 6 && hour < 18) {
+        // Día: establecer la clase 'day-background'
+        body.classList.remove('night-background');
+        body.classList.add('day-background');
+    } else {
+        // Noche: establecer la clase 'night-background'
+        body.classList.remove('day-background');
+        body.classList.add('night-background');
+    }
+}
 
 function updateTime() {
     const now = new Date();
@@ -47,12 +66,23 @@ function generateCalendar(year, month) {
 
         calendarContainer.appendChild(dayDiv);
     }
+
+    dayDiv.addEventListener("click", () => {
+        const selectedDayName = daysOfWeek[new Date(year, month, day).getDay()];
+        inputField.value = `${selectedDayName}, ${day}`;
+    });
+
+    calendarContainer.appendChild(dayDiv);
 }
 
 const currentDate = new Date();
 const currentYear = currentDate.getFullYear();
 const currentMonth = currentDate.getMonth();
 
+setDayNightMode();
+
 generateCalendar(currentYear, currentMonth);
 
 setInterval(updateTime, 1000);
+
+setInterval(setDayNightMode, 3600000); // Verifica la hora cada hora (3600000ms)
