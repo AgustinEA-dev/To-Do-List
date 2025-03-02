@@ -101,6 +101,7 @@ h1 {
     text-align: center;
     font-size: 70px;
     font-family: "Sigmar", serif;
+    line-height: 1;
     margin: 20px 0;
     background: linear-gradient(45deg, #ffffff, #ffffff);
     background-clip: text;
